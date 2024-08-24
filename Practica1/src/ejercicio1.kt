@@ -1,16 +1,18 @@
-//1. Evaluación de empleados.
+//1-Evaluación de empleados. Crear un programa que determine el nivel de rendimiento y el dinero que recibira un empleado, mediante su puntuacion y salario
 //Autor: Andrea del Rosario Velazco
 //Fecha de creacion: 22/08/2024
-//Ultima modificacion:
+//Ultima modificacion: 24/08/2024
 fun main() {
-    // Leer la puntuación y el salario del usuario
+
+    // Leer la puntuación del usuario
     print("Ingrese la puntuación del empleado (0 a 10): ")
     val puntuacion = readLine()?.toIntOrNull() ?: 0
 
+    // Leer el salario del usuario
     print("Ingrese el salario mensual del empleado: ")
     val salario = readLine()?.toDoubleOrNull() ?: 0.0
 
-    // Determinar el nivel de rendimiento basado en la puntuación
+    // Determinamos el nivel de rendimiento del usuario
     val nivel = when (puntuacion) {
         in 0..3 -> "Inaceptable"
         in 4..6 -> "Aceptable"
@@ -18,7 +20,7 @@ fun main() {
         else -> "Puntuación inválida"
     }
 
-    // Calcular la cantidad de dinero recibida
+    // Calculamos la cantidad de dinero recibida
     val dineroRecibido = salario * (puntuacion / 10.0)
 
     // Imprimir el resultado
