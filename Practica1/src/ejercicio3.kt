@@ -1,12 +1,12 @@
-//3
+//3-Calculadora Elemental. Se debe implementar una calculadora que contenga un menu con las operaciones basicas
 //Autor: Andrea del Rosario Velazco
 //Fecha de creacion: 22/08/2024
-//Ultima modificacion:
+//Ultima modificacion: 24/08/2024
 
 fun main() {
     while (true) {
-        // Mostrar el menú
-        println("==== Menú ====")
+        // Mostrarmos el menú
+        println("====== Menú ======")
         println("1. Suma")
         println("2. Resta")
         println("3. Multiplicación")
@@ -14,16 +14,16 @@ fun main() {
         println("5. Salir")
         print("Elige una opción: ")
 
-        // Leer la opción seleccionada
+        // Leer la opción que selecciono el usuario
         val opcion = readLine()?.toIntOrNull()
 
-        // Validar la opción
+        // Verificar que la opcion elegida sea valida
         if (opcion !in 1..5) {
             println("Opción no válida. Por favor, elige una opción del 1 al 5.\n")
             continue
         }
 
-        // Salir si la opción es 5
+        // Salir si la opción elegida es 5
         if (opcion == 5) {
             println("¡Adios!")
             break
@@ -36,13 +36,13 @@ fun main() {
         print("Ingresa el segundo número: ")
         val num2 = readLine()?.toDoubleOrNull() ?: 0.0
 
-        // Realizar la operación seleccionada
+        // Realizar la operación que selecciono el usuario
         val resultado = when (opcion) {
             1 -> num1 + num2
             2 -> num1 - num2
             3 -> num1 * num2
             4 -> if (num2 != 0.0) num1 / num2 else {
-                println("Error: División por cero no es permitida.")
+                println("Error: División por cero no es permitida.") // Salida para cuando no se pueda realizar una division
                 null
             }
             else -> null
