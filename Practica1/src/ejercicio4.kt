@@ -1,7 +1,7 @@
-//4
+//4-Adivina Número. Se debe crear un programa que genere un numero random para que el usuario pueda adivinar en 5 intentos
 //Autor: Andrea del Rosario Velazco
 //Fecha de creacion: 22/08/2024
-//Ultima modificacion:
+//Ultima modificacion: 24/08/2024
 
 import kotlin.random.Random
 
@@ -17,10 +17,11 @@ fun main() {
         val intentoUsuario = readLine()?.toIntOrNull()
 
         if (intentoUsuario == null || intentoUsuario !in 1..30) {
-            println("Por favor, ingresa un número válido entre 1 y 30.")
+            println("Por favor, ingresa un número válido entre 1 y 30.") //En caso el usuario ingrese un numero que no este entre 1 y 30
             continue
         }
 
+        //Pistas para que el usuario siga intentando
         when {
             intentoUsuario < numeroAleatorio -> {
                 println("El número es mayor.")
@@ -29,7 +30,7 @@ fun main() {
                 println("El número es menor.")
             }
             else -> {
-                println("¡Felicidades! Adivinaste el número $numeroAleatorio.")
+                println("¡Ganaste! Adivinaste el número $numeroAleatorio.") //Si el usuario anivino el numero
                 return
             }
         }
@@ -37,5 +38,6 @@ fun main() {
     }
 
     // Si se acaban los intentos y no se adivinó el número
-    println("Game over. El número era $numeroAleatorio.")
+    println("Game over :( El número era $numeroAleatorio.")
 }
+
