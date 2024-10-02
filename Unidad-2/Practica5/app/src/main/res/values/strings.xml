@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">ReproductorMusica</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="Audio">Audio Name</string>
+    <string name="ButtonStop">Stop</string>
+    <string name="ButtonPause">Pause</string>
+    <string name="ButtonPlay">Play</string>
+    <string name="ButtonBack">Back</string>
+
+</resources>
