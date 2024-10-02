@@ -1,0 +1,53 @@
+<html>
+<head>
+<title>ejercicio1.kt</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #7a7e85;}
+.s1 { color: #bcbec4;}
+.s2 { color: #cf8e6d;}
+.s3 { color: #bcbec4;}
+.s4 { color: #6aab73;}
+.s5 { color: #2aacb8;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+ejercicio1.kt</font>
+</center></td></tr></table>
+<pre><span class="s0">//1. Evaluación de empleados.</span>
+<span class="s0">//Autor: Andrea del Rosario Velazco</span>
+<span class="s0">//Fecha de creacion: 22/08/2024</span>
+<span class="s0">//Ultima modificacion:</span>
+<span class="s2">fun </span><span class="s1">main</span><span class="s3">() {</span>
+    <span class="s0">// Leer la puntuación y el salario del usuario</span>
+    <span class="s1">print</span><span class="s3">(</span><span class="s4">&quot;Ingrese la puntuación del empleado (0 a 10): &quot;</span><span class="s3">)</span>
+    <span class="s2">val </span><span class="s1">puntuacion </span><span class="s3">= </span><span class="s1">readLine</span><span class="s3">()</span><span class="s1">?</span><span class="s3">.</span><span class="s1">toIntOrNull</span><span class="s3">() </span><span class="s1">?: </span><span class="s5">0</span>
+
+    <span class="s1">print</span><span class="s3">(</span><span class="s4">&quot;Ingrese el salario mensual del empleado: &quot;</span><span class="s3">)</span>
+    <span class="s2">val </span><span class="s1">salario </span><span class="s3">= </span><span class="s1">readLine</span><span class="s3">()</span><span class="s1">?</span><span class="s3">.</span><span class="s1">toDoubleOrNull</span><span class="s3">() </span><span class="s1">?: </span><span class="s5">0.0</span>
+
+    <span class="s0">// Determinar el nivel de rendimiento basado en la puntuación</span>
+    <span class="s2">val </span><span class="s1">nivel </span><span class="s3">= </span><span class="s2">when </span><span class="s3">(</span><span class="s1">puntuacion</span><span class="s3">) {</span>
+        <span class="s2">in </span><span class="s5">0</span><span class="s3">..</span><span class="s5">3 </span><span class="s3">-&gt; </span><span class="s4">&quot;Inaceptable&quot;</span>
+        <span class="s2">in </span><span class="s5">4</span><span class="s3">..</span><span class="s5">6 </span><span class="s3">-&gt; </span><span class="s4">&quot;Aceptable&quot;</span>
+        <span class="s2">in </span><span class="s5">7</span><span class="s3">..</span><span class="s5">10 </span><span class="s3">-&gt; </span><span class="s4">&quot;Meritorio&quot;</span>
+        <span class="s2">else </span><span class="s3">-&gt; </span><span class="s4">&quot;Puntuación inválida&quot;</span>
+    <span class="s3">}</span>
+
+    <span class="s0">// Calcular la cantidad de dinero recibida</span>
+    <span class="s2">val </span><span class="s1">dineroRecibido </span><span class="s3">= </span><span class="s1">salario </span><span class="s3">* (</span><span class="s1">puntuacion </span><span class="s3">/ </span><span class="s5">10.0</span><span class="s3">)</span>
+
+    <span class="s0">// Imprimir el resultado</span>
+    <span class="s2">if </span><span class="s3">(</span><span class="s1">nivel </span><span class="s3">!= </span><span class="s4">&quot;Puntuación inválida&quot;</span><span class="s3">) {</span>
+        <span class="s1">println</span><span class="s3">(</span><span class="s4">&quot;Nivel de rendimiento: </span><span class="s2">$</span><span class="s1">nivel</span><span class="s4">&quot;</span><span class="s3">)</span>
+        <span class="s1">println</span><span class="s3">(</span><span class="s4">&quot;Cantidad de dinero recibida: </span><span class="s2">\$${</span><span class="s4">&quot;%.2f&quot;</span><span class="s3">.</span><span class="s1">format</span><span class="s3">(</span><span class="s1">dineroRecibido</span><span class="s3">)</span><span class="s2">}</span><span class="s4">&quot;</span><span class="s3">)</span>
+    <span class="s3">} </span><span class="s2">else </span><span class="s3">{</span>
+        <span class="s1">println</span><span class="s3">(</span><span class="s4">&quot;Puntuación fuera de rango. Por favor ingrese un valor entre 0 y 10.&quot;</span><span class="s3">)</span>
+    <span class="s3">}</span>
+<span class="s3">}</span>
+</pre>
+</body>
+</html>

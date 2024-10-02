@@ -1,0 +1,63 @@
+<html>
+<head>
+<title>ejercicio4.kt</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #7a7e85;}
+.s1 { color: #bcbec4;}
+.s2 { color: #bcbec4;}
+.s3 { color: #cf8e6d;}
+.s4 { color: #2aacb8;}
+.s5 { color: #6aab73;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+ejercicio4.kt</font>
+</center></td></tr></table>
+<pre><span class="s0">//4</span>
+<span class="s0">//Autor: Andrea del Rosario Velazco</span>
+<span class="s0">//Fecha de creacion: 22/08/2024</span>
+<span class="s0">//Ultima modificacion:</span>
+
+<span class="s1">import kotlin</span><span class="s2">.</span><span class="s1">random</span><span class="s2">.</span><span class="s1">Random</span>
+
+<span class="s3">fun </span><span class="s1">main</span><span class="s2">() {</span>
+    <span class="s0">// Generar un número aleatorio entre 1 y 30</span>
+    <span class="s3">val </span><span class="s1">numeroAleatorio </span><span class="s2">= </span><span class="s1">Random</span><span class="s2">.</span><span class="s1">nextInt</span><span class="s2">(</span><span class="s4">1</span><span class="s2">, </span><span class="s4">31</span><span class="s2">)</span>
+    <span class="s3">var </span><span class="s1">intentos </span><span class="s2">= </span><span class="s4">5</span>
+
+    <span class="s1">println</span><span class="s2">(</span><span class="s5">&quot;¡Adivina el número entre 1 y 30!&quot;</span><span class="s2">)</span>
+
+    <span class="s3">while </span><span class="s2">(</span><span class="s1">intentos </span><span class="s2">&gt; </span><span class="s4">0</span><span class="s2">) {</span>
+        <span class="s1">print</span><span class="s2">(</span><span class="s5">&quot;Te quedan </span><span class="s3">$</span><span class="s1">intentos </span><span class="s5">intento(s). Ingresa tu número: &quot;</span><span class="s2">)</span>
+        <span class="s3">val </span><span class="s1">intentoUsuario </span><span class="s2">= </span><span class="s1">readLine</span><span class="s2">()</span><span class="s1">?</span><span class="s2">.</span><span class="s1">toIntOrNull</span><span class="s2">()</span>
+
+        <span class="s3">if </span><span class="s2">(</span><span class="s1">intentoUsuario </span><span class="s2">== </span><span class="s3">null </span><span class="s2">|| </span><span class="s1">intentoUsuario </span><span class="s3">!in </span><span class="s4">1</span><span class="s2">..</span><span class="s4">30</span><span class="s2">) {</span>
+            <span class="s1">println</span><span class="s2">(</span><span class="s5">&quot;Por favor, ingresa un número válido entre 1 y 30.&quot;</span><span class="s2">)</span>
+            <span class="s3">continue</span>
+        <span class="s2">}</span>
+
+        <span class="s3">when </span><span class="s2">{</span>
+            <span class="s1">intentoUsuario </span><span class="s2">&lt; </span><span class="s1">numeroAleatorio </span><span class="s2">-&gt; {</span>
+                <span class="s1">println</span><span class="s2">(</span><span class="s5">&quot;El número es mayor.&quot;</span><span class="s2">)</span>
+            <span class="s2">}</span>
+            <span class="s1">intentoUsuario </span><span class="s2">&gt; </span><span class="s1">numeroAleatorio </span><span class="s2">-&gt; {</span>
+                <span class="s1">println</span><span class="s2">(</span><span class="s5">&quot;El número es menor.&quot;</span><span class="s2">)</span>
+            <span class="s2">}</span>
+            <span class="s3">else </span><span class="s2">-&gt; {</span>
+                <span class="s1">println</span><span class="s2">(</span><span class="s5">&quot;¡Felicidades! Adivinaste el número </span><span class="s3">$</span><span class="s1">numeroAleatorio</span><span class="s5">.&quot;</span><span class="s2">)</span>
+                <span class="s3">return</span>
+            <span class="s2">}</span>
+        <span class="s2">}</span>
+        <span class="s1">intentos</span><span class="s2">--</span>
+    <span class="s2">}</span>
+
+    <span class="s0">// Si se acaban los intentos y no se adivinó el número</span>
+    <span class="s1">println</span><span class="s2">(</span><span class="s5">&quot;Game over. El número era </span><span class="s3">$</span><span class="s1">numeroAleatorio</span><span class="s5">.&quot;</span><span class="s2">)</span>
+<span class="s2">}</span>
+</pre>
+</body>
+</html>
